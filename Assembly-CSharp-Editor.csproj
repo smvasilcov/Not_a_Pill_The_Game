@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2C77DCCE-C409-8720-4A96-274CA5F960D9}</ProjectGuid>
+    <ProjectGuid>{B545410F-2DAB-74C9-C4B1-5B21DDDE2B13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -55,7 +55,7 @@
      <Compile Include="Assets\OSC simpl\Base\Internal\Editor\OscMappingDrawer.cs" />
      <Compile Include="Assets\OSC simpl\Base\Internal\Editor\OscOutInspector.cs" />
  <Reference Include="com.unity.package-manager-ui.Editor">
- <HintPath>C:/Users/Sergey/Google Диск/Neurobiofeedback/Материал на мастер-класс/Управление VR силой мысли/MuseRecieveTest2/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
+ <HintPath>C:/Users/Sergey/Documents/UnityProjects/Not_a_Pill_The_Game/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity 2018.1.0b5/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -354,7 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{4C0E0236-4310-0DBF-D889-8D76109B1F97}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{68049C06-B31C-F193-7A9F-8201D22AF19D}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

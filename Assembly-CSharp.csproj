@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4C0E0236-4310-0DBF-D889-8D76109B1F97}</ProjectGuid>
+    <ProjectGuid>{68049C06-B31C-F193-7A9F-8201D22AF19D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -92,6 +92,8 @@
      <Compile Include="Assets\Scripts\csv_make.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Levels\Level1.cs" />
+     <Compile Include="Assets\Scripts\MindVisualisation\CubeIndicatorController.cs" />
+     <Compile Include="Assets\Scripts\MindVisualisation\MindVisualisationGameController.cs" />
      <Compile Include="Assets\Scripts\MuseRecieve.cs" />
      <Compile Include="Assets\Scripts\OscIn.cs" />
      <Compile Include="Assets\Scripts\OscOut.cs" />
@@ -104,7 +106,7 @@
      <Compile Include="Assets\UsingMuseData.cs" />
      <None Include="Assets\OSC simpl\Documents\Versions.txt" />
  <Reference Include="com.unity.package-manager-ui.Editor">
- <HintPath>C:/Users/Sergey/Google Диск/Neurobiofeedback/Материал на мастер-класс/Управление VR силой мысли/MuseRecieveTest2/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
+ <HintPath>C:/Users/Sergey/Documents/UnityProjects/Not_a_Pill_The_Game/Library/ScriptAssemblies/com.unity.package-manager-ui.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity 2018.1.0b5/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
