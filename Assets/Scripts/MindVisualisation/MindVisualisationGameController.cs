@@ -27,7 +27,8 @@ public class MindVisualisationGameController : MonoBehaviour {
     //Rigidbody Player_rb;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         ResultsOfCalibrationWaiter.SetActive(false);
 
         accuracy = PythonRecieve.GetComponent<PythonRecieve>().accuracy_;
@@ -37,7 +38,8 @@ public class MindVisualisationGameController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
         float[] a_r = MuseRecieve.GetComponent<MuseRecieve>().alpha_relative;
         float[] b_r = MuseRecieve.GetComponent<MuseRecieve>().beta_relative;
@@ -63,5 +65,10 @@ public class MindVisualisationGameController : MonoBehaviour {
         //ConcentrationCube.transform.localScale = new Vector3(ConcentrationCube.transform.localScale.x, (float)concentration_centred, ConcentrationCube.transform.localScale.z);
         //Player_rb.AddForce(transform.up * Convert.ToSingle(concentration_centred));
 
+    }
+
+    public float GetAccuracy()
+    {
+        return accuracy;
     }
 }

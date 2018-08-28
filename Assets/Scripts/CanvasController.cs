@@ -12,6 +12,7 @@ public class CanvasController : MonoBehaviour {
     public GameObject CalibrationMenu;
     public GameObject LevelCanvas;
     public GameObject Objects;
+    public GameObject StateRecordingPanel;
 
     public GameObject CalibrationPlusCSV;
     public GameObject ResultsOfCalibrationWaiter;
@@ -24,20 +25,22 @@ public class CanvasController : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
         Objects.SetActive(false);
         LevelCanvas.SetActive(false);
         CalibrationMenu.SetActive(false);
         WelcomeMenu.SetActive(true);
         OSCController.SetActive(true);
+        StateRecordingPanel.SetActive(false);
         CalibrateButton.GetComponent<Button>().onClick.AddListener(CalibrationStart);
         StartTheGameButton.GetComponent<Button>().onClick.AddListener(StartPython);
 	}
 
     
-    void CalibrationStart()
+    public void CalibrationStart()
     {
         WelcomeMenu.SetActive(false);
+        LevelCanvas.SetActive(false);
         CalibrationMenu.SetActive(true);
         CalibrationPlusCSV.SetActive(true);
     }
@@ -49,12 +52,23 @@ public class CanvasController : MonoBehaviour {
 
     public void StartGame(string accuracy)
     {
+        Debug.Log("Start Game");
         AccuracyText.text = (accuracy);
+        CalibrationPlusCSV.SetActive(false);
+        ResultsOfCalibrationWaiter.SetActive(false);
         WelcomeMenu.SetActive(false);
         CalibrationMenu.SetActive(false);
+        StateRecordingPanel.SetActive(false);
         LevelCanvas.SetActive(true);
         GameController.SetActive(true);
         Objects.SetActive(true);
+    }
+
+    public void RecordState()
+    {
+        Debug.Log("Record state code");
+        StateRecordingPanel.SetActive(true);
+        CalibrationPlusCSV.SetActive(true);
     }
 
     void Update()

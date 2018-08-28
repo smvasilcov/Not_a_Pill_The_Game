@@ -342,6 +342,7 @@
     <Compile Include="Assets\Scripts\Levels\Level1.cs" />
     <Compile Include="Assets\Scripts\MindVisualisation\CubeIndicatorController.cs" />
     <Compile Include="Assets\Scripts\MindVisualisation\MindVisualisationGameController.cs" />
+    <Compile Include="Assets\Scripts\MindVisualisation\RecordState.cs" />
     <Compile Include="Assets\Scripts\MuseRecieve.cs" />
     <Compile Include="Assets\Scripts\OscIn.cs" />
     <Compile Include="Assets\Scripts\OscOut.cs" />

@@ -34,6 +34,7 @@ public class PythonRecieve : MonoBehaviour
         oscIn.Unmap(log_reg_coefs);
         oscIn.Unmap(log_reg_accuracy);
         oscIn.Unmap(log_reg_intercept);
+
     }
 
     void log_reg_coefs(OscMessage value)
