@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 public class MindVisualisationGameController : MonoBehaviour {
@@ -10,7 +11,10 @@ public class MindVisualisationGameController : MonoBehaviour {
     public GameObject MuseRecieve;
     public GameObject ResultsOfCalibrationWaiter;
 
-    public GameObject ConcentrationCube;
+    public Text ConcentrationLevelText;
+
+    //public GameObject ConcentrationCube;
+    public GameObject ConcentrationSphere;
 
     public float strenth;
 
@@ -43,9 +47,20 @@ public class MindVisualisationGameController : MonoBehaviour {
             +coefs[8]*g_r[0]+coefs[9]*g_r[1]+coefs[10]*g_r[2]+coefs[11]*g_r[3];
         concentration = 1.0 / (1.0 + Math.Exp(-concentration));
 
-        Debug.Log(concentration);
+        //Debug.Log(concentration);
+        ConcentrationLevelText.text = ("Concentration: " + concentration.ToString("0.000"));
         concentration_centred = concentration - 0.5;
-        ConcentrationCube.transform.localScale = new Vector3(ConcentrationCube.transform.localScale.x, (float)concentration_centred, ConcentrationCube.transform.localScale.z);
+
+        ConcentrationSphere.transform.localScale = new Vector3((float)concentration*2, (float)concentration*2, (float)concentration*2);
+        if (concentration >= 0.5)
+        {
+            ConcentrationSphere.GetComponent<Renderer>().material.color = Color.blue;
+        }
+        else if (concentration < 0.5)
+        {
+            ConcentrationSphere.GetComponent<Renderer>().material.color = Color.grey;
+        }
+        //ConcentrationCube.transform.localScale = new Vector3(ConcentrationCube.transform.localScale.x, (float)concentration_centred, ConcentrationCube.transform.localScale.z);
         //Player_rb.AddForce(transform.up * Convert.ToSingle(concentration_centred));
 
     }

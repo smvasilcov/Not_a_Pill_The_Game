@@ -10,22 +10,28 @@ public class CanvasController : MonoBehaviour {
 
     public GameObject WelcomeMenu;
     public GameObject CalibrationMenu;
+    public GameObject LevelCanvas;
     public GameObject Objects;
 
     public GameObject CalibrationPlusCSV;
     public GameObject ResultsOfCalibrationWaiter;
     public GameObject OSCController;
 
-   
+    public GameObject GameController;
+
+    public Text AccuracyText;
+
+
 
     // Use this for initialization
     void Start () {
         Objects.SetActive(false);
+        LevelCanvas.SetActive(false);
         CalibrationMenu.SetActive(false);
         WelcomeMenu.SetActive(true);
         OSCController.SetActive(true);
         CalibrateButton.GetComponent<Button>().onClick.AddListener(CalibrationStart);
-        StartTheGameButton.GetComponent<Button>().onClick.AddListener(StartGame);
+        StartTheGameButton.GetComponent<Button>().onClick.AddListener(StartPython);
 	}
 
     
@@ -36,9 +42,19 @@ public class CanvasController : MonoBehaviour {
         CalibrationPlusCSV.SetActive(true);
     }
 
-    void StartGame()
+    void StartPython()
     {
         ResultsOfCalibrationWaiter.SetActive(true);
+    }
+
+    public void StartGame(string accuracy)
+    {
+        AccuracyText.text = (accuracy);
+        WelcomeMenu.SetActive(false);
+        CalibrationMenu.SetActive(false);
+        LevelCanvas.SetActive(true);
+        GameController.SetActive(true);
+        Objects.SetActive(true);
     }
 
     void Update()
