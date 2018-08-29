@@ -11,6 +11,7 @@ public class PythonRecieve : MonoBehaviour
     public float[] coefs_;
     [HideInInspector]
     public float accuracy_, intercept_;
+    private float[] float_value = new float[14];
 
     // Use this for initialization
     void Start()
@@ -27,6 +28,8 @@ public class PythonRecieve : MonoBehaviour
         oscIn.Map("/log_reg", log_reg_coefs);
         oscIn.Map("/accuracy", log_reg_accuracy);
         oscIn.Map("/intercept", log_reg_intercept);
+
+        float_value = new float[14]; // Обнуление массива коэффициентов
     }
 
     void OnDisable()
@@ -44,7 +47,7 @@ public class PythonRecieve : MonoBehaviour
         Debug.Log(string_value);
         
         string[] array_value = string_value.Split(' ');
-        float[] float_value = new float[14];
+        //float[] float_value = new float[14];
         for (int i=0; i<12; i++)
         {
             float_value[i] = float.Parse(array_value[i+1]);
@@ -66,5 +69,10 @@ public class PythonRecieve : MonoBehaviour
         string string_value = value.ToString();
         string[] array_value = string_value.Split(' ');
         intercept_ = float.Parse(array_value[1]);         // To public array
+    }
+
+    public float[] GetCoefArray()
+    {
+        return float_value;
     }
 }

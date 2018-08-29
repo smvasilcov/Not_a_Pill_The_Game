@@ -17,6 +17,7 @@ public class CanvasController : MonoBehaviour {
     public GameObject CalibrationPlusCSV;
     public GameObject ResultsOfCalibrationWaiter;
     public GameObject OSCController;
+    public GameObject CubeIndicatorController;
 
     public GameObject GameController;
 
@@ -27,6 +28,7 @@ public class CanvasController : MonoBehaviour {
     // Use this for initialization
     public void Start () {
         Objects.SetActive(false);
+        CubeIndicatorController.SetActive(false);
         LevelCanvas.SetActive(false);
         CalibrationMenu.SetActive(false);
         WelcomeMenu.SetActive(true);
@@ -62,6 +64,7 @@ public class CanvasController : MonoBehaviour {
         LevelCanvas.SetActive(true);
         GameController.SetActive(true);
         Objects.SetActive(true);
+        CubeIndicatorController.SetActive(true);
     }
 
     public void RecordState()

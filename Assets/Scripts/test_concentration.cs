@@ -26,7 +26,7 @@ public class test_concentration : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        csvcontent.AppendLine("a_r_TP9,a_r_Fp1,a_r_Fp2,a_r_TP10,b_r_TP9,b_r_Fp1,b_r_Fp2,b_r_TP10,g_r_TP9,g_r_Fp1,g_r_Fp2,g_r_TP10,state");
+        csvcontent.AppendLine("a_r_TP9;a_r_Fp1;a_r_Fp2;a_r_TP10;b_r_TP9;b_r_Fp1;b_r_Fp2;b_r_TP10;g_r_TP9;g_r_Fp1;g_r_Fp2;g_r_TP10;state");
     }
 
     // Update is called once per frame
@@ -46,8 +46,8 @@ public class test_concentration : MonoBehaviour {
             ConcentrateState = 0;
         }
 
-        csvcontent.AppendLine(a_r[0] + "," + a_r[1] + "," + a_r[2] + "," + a_r[3] + "," + b_r[0]
-            + "," + b_r[1] + "," + b_r[2] + "," + b_r[3] + "," + g_r[0] + "," + g_r[1] + "," + g_r[2] + "," + g_r[3] + "," + ConcentrateState);
+        csvcontent.AppendLine(a_r[0] + ";" + a_r[1] + ";" + a_r[2] + ";" + a_r[3] + ";" + b_r[0]
+            + ";" + b_r[1] + ";" + b_r[2] + ";" + b_r[3] + ";" + g_r[0] + ";" + g_r[1] + ";" + g_r[2] + ";" + g_r[3] + ";" + ConcentrateState);
         UnityEngine.Debug.Log(csvcontent);
 
 

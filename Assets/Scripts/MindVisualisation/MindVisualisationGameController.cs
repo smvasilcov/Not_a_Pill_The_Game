@@ -10,6 +10,8 @@ public class MindVisualisationGameController : MonoBehaviour {
     public GameObject PythonRecieve;
     public GameObject MuseRecieve;
     public GameObject ResultsOfCalibrationWaiter;
+    public GameObject ChooseDateTimeController;
+    public Text AccuracyText;
 
     public Text ConcentrationLevelText;
 
@@ -70,5 +72,13 @@ public class MindVisualisationGameController : MonoBehaviour {
     public float GetAccuracy()
     {
         return accuracy;
+    }
+
+    public void ShowNewState()
+    {
+        accuracy = ChooseDateTimeController.GetComponent<ChooseDateTime>().GetAccuracy();
+        intercept = ChooseDateTimeController.GetComponent<ChooseDateTime>().GetIntercept();
+        coefs = ChooseDateTimeController.GetComponent<ChooseDateTime>().GetCoefs();
+        AccuracyText.text = ("Acc: " + accuracy.ToString());
     }
 }
