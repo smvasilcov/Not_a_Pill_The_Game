@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level1 : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class Level1 : MonoBehaviour {
     public Text TaskText;
     public Text LevelDoneText;
     public GameObject Rocket;
+    public GameObject GameController;
 
     private float altitude;
 
@@ -25,6 +27,8 @@ public class Level1 : MonoBehaviour {
         {
             LevelDoneText.text = "Congradulations! \nYou have reached 5000 meters.";
             Rocket.SetActive(false);
+ 
+            SceneManager.LoadScene("MindVisualise");
         }
     }
 }

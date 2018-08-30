@@ -17,7 +17,7 @@ public class CubeIndicatorController : MonoBehaviour
     private float[] a_r = new float[5];
     private float[] b_r = new float[5];
     private float[] g_r = new float[5];
-    private float[] chosenMuseData = new float[5];
+    private float[] chosenMuseData;// = new float[5];
 
     public Color alpha_color = Color.red;
     public Color beta_color = Color.green;
@@ -47,7 +47,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = alpha_color;
                 Light_indicator[3].GetComponent<Light>().color = alpha_color;
                 //LightPrefab.GetComponent<Light>().color = alpha_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -68,7 +68,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = beta_color;
                 Light_indicator[3].GetComponent<Light>().color = beta_color;
                 //LightPrefab.GetComponent<Light>().color = beta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -89,7 +89,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = delta_color;
                 Light_indicator[3].GetComponent<Light>().color = delta_color;
                 //LightPrefab.GetComponent<Light>().color = delta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -110,7 +110,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = theta_color;
                 Light_indicator[3].GetComponent<Light>().color = theta_color;
                 //LightPrefab.GetComponent<Light>().color = theta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -131,7 +131,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = gamma_color;
                 Light_indicator[3].GetComponent<Light>().color = gamma_color;
                 //LightPrefab.GetComponent<Light>().color = gamma_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -152,7 +152,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = alpha_color;
                 Light_indicator[3].GetComponent<Light>().color = alpha_color;
                 //LightPrefab.GetComponent<Light>().color = alpha_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -173,7 +173,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = beta_color;
                 Light_indicator[3].GetComponent<Light>().color = beta_color;
                 //LightPrefab.GetComponent<Light>().color = beta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -194,7 +194,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = delta_color;
                 Light_indicator[3].GetComponent<Light>().color = delta_color;
                 //LightPrefab.GetComponent<Light>().color = delta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -215,7 +215,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = theta_color;
                 Light_indicator[3].GetComponent<Light>().color = theta_color;
                 //LightPrefab.GetComponent<Light>().color = theta_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);
@@ -236,7 +236,7 @@ public class CubeIndicatorController : MonoBehaviour
                 Light_indicator[2].GetComponent<Light>().color = gamma_color;
                 Light_indicator[3].GetComponent<Light>().color = gamma_color;
                 //LightPrefab.GetComponent<Light>().color = gamma_color;
-                if (chosenMuseData[0] != 0.0f)  // If there is signal from Muse headband
+                if (chosenMuseData != null && chosenMuseData.Length >= 4)  // If there is signal from Muse headband
                 {
                     Cube_indicator[0].transform.localScale = new Vector3(Cube_indicator[0].transform.localScale.x, chosenMuseData[0], Cube_indicator[0].transform.localScale.z);
                     Cube_indicator[1].transform.localScale = new Vector3(Cube_indicator[1].transform.localScale.x, chosenMuseData[1], Cube_indicator[1].transform.localScale.z);

@@ -26,20 +26,30 @@ public class CanvasController : MonoBehaviour {
 
 
     // Use this for initialization
-    public void Start () {
-        Objects.SetActive(false);
-        CubeIndicatorController.SetActive(false);
-        LevelCanvas.SetActive(false);
-        CalibrationMenu.SetActive(false);
-        WelcomeMenu.SetActive(true);
-        OSCController.SetActive(true);
-        StateRecordingPanel.SetActive(false);
-        CalibrateButton.GetComponent<Button>().onClick.AddListener(CalibrationStart);
-        StartTheGameButton.GetComponent<Button>().onClick.AddListener(StartPython);
+    public void Start ()
+    {
+        if (StaticScriptWithVariables.accuracy != 0)
+        {
+            //Objects.SetActive(true);
+            StartGame(StaticScriptWithVariables.accuracy.ToString());
+
+        }
+        else
+        {
+            Objects.SetActive(false);
+            CubeIndicatorController.SetActive(false);
+            LevelCanvas.SetActive(false);
+            CalibrationMenu.SetActive(false);
+            WelcomeMenu.SetActive(true);
+            OSCController.SetActive(true);
+            StateRecordingPanel.SetActive(false);
+            //CalibrateButton.GetComponent<Button>().onClick.AddListener(CalibrationStart);
+            //StartTheGameButton.GetComponent<Button>().onClick.AddListener(StartPython);
+        }
 	}
 
     
-    public void CalibrationStart()
+    public void CalibrationStart()      // Используется кнопкой Calibrate в MindVisualise
     {
         WelcomeMenu.SetActive(false);
         LevelCanvas.SetActive(false);
@@ -47,7 +57,7 @@ public class CanvasController : MonoBehaviour {
         CalibrationPlusCSV.SetActive(true);
     }
 
-    void StartPython()
+    public void StartPython()  // Используется кнопкой StartGame в MindVisualise
     {
         ResultsOfCalibrationWaiter.SetActive(true);
     }

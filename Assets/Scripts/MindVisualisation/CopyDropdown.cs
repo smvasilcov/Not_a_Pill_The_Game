@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CopyDropdown : MonoBehaviour {
 
     public Dropdown DropdownToCopyFrom;
-    public GameObject ChooseDateTimeController;
+    //public GameObject ChooseDateTimeController;
 
 	void Start ()
     {
@@ -21,7 +21,7 @@ public class CopyDropdown : MonoBehaviour {
         {
             //m_DropOptions.Add(DropdownToCopyFrom.options[counter].text.ToString());
             this.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData(DropdownToCopyFrom.options[counter].text.ToString()));
-            Debug.Log("Dropdown option = " + DropdownToCopyFrom.options[counter].text.ToString());
+            //Debug.Log("Dropdown option = " + DropdownToCopyFrom.options[counter].text.ToString());
 
             counter++;
         }

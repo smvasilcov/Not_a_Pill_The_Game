@@ -325,10 +325,10 @@ RectTransform:
   m_Father: {fileID: 565024028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &169853530
 GameObject:
@@ -703,6 +703,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 139718447}
     m_Modifications:
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224556823146699482, guid: 54330e030a08110409b283843e124f00,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -812,6 +817,31 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.4999999
       objectReference: {fileID: 0}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 716056860}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartPython
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54330e030a08110409b283843e124f00, type: 2}
   m_IsPrefabParent: 0
@@ -823,7 +853,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 323796555}
-  - component: {fileID: 323796554}
+  - component: {fileID: 323796556}
   m_Layer: 0
   m_Name: ResultsOfCalibrationWaiter
   m_TagString: Untagged
@@ -831,24 +861,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &323796554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 323796553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3900bc304ccaf0247be837894b1672c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PythonRecieve: {fileID: 1072793774}
-  Objects: {fileID: 2000747513}
-  GameController: {fileID: 1291626735}
-  CalibrationPlusCSV: {fileID: 547828263}
-  WelcomeMenu: {fileID: 139718446}
-  CalibrationMenu: {fileID: 2029899581}
-  AccuracyText: {fileID: 683737724}
 --- !u!4 &323796555
 Transform:
   m_ObjectHideFlags: 0
@@ -862,6 +874,21 @@ Transform:
   m_Father: {fileID: 1854795714}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323796556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323796553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b67215a2762244fb25891d63ade113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PythonRecieve: {fileID: 1072793774}
+  GameController: {fileID: 1291626735}
+  CalibrationPlusCSV: {fileID: 547828263}
+  CanvasController: {fileID: 716056857}
 --- !u!1 &338105686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1235,7 @@ MonoBehaviour:
   TaskText: {fileID: 753498539}
   LevelDoneText: {fileID: 2147186382}
   Rocket: {fileID: 231430502}
+  GameController: {fileID: 1291626735}
 --- !u!1 &547828263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1556,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 716056858}
-  - component: {fileID: 716056859}
+  - component: {fileID: 716056860}
   m_Layer: 0
   m_Name: CanvasController
   m_TagString: Untagged
@@ -1549,7 +1577,7 @@ Transform:
   m_Father: {fileID: 1854795714}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &716056859
+--- !u!114 &716056860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1557,17 +1585,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 716056857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17e2a8c9e224b64f821ba181d95b55b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b194c71730e9d1408d02b2fd94ee13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CalibrateButton: {fileID: 1732782511}
-  StartTheGameButton: {fileID: 1995645182}
   WelcomeMenu: {fileID: 139718446}
   CalibrationMenu: {fileID: 2029899581}
   Objects: {fileID: 2000747513}
   CalibrationPlusCSV: {fileID: 547828263}
   ResultsOfCalibrationWaiter: {fileID: 323796553}
   OSCController: {fileID: 779139784}
+  GameController: {fileID: 1291626735}
+  AccuracyText: {fileID: 683737724}
 --- !u!1 &753498537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,10 +1700,10 @@ RectTransform:
   m_Father: {fileID: 139718447}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755560681
 MonoBehaviour:
@@ -2374,12 +2402,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224556823146699482, guid: 54330e030a08110409b283843e124f00,
     type: 2}
   m_PrefabInternal: {fileID: 1883673653}
---- !u!114 &1732782511 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
-    type: 2}
-  m_PrefabInternal: {fileID: 1883673653}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1737816235 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1934740426397506, guid: 1a0581505c68eee40994df38a61e1427,
@@ -2495,7 +2517,7 @@ Prefab:
     - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224556823146699482, guid: 54330e030a08110409b283843e124f00,
         type: 2}
@@ -2615,8 +2637,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: e30060865007f5a418be21b4dff06bc4,
-        type: 3}
+      objectReference: {fileID: 716056860}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CalibrationStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54330e030a08110409b283843e124f00, type: 2}
   m_IsPrefabParent: 0
@@ -2654,12 +2685,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224556823146699482, guid: 54330e030a08110409b283843e124f00,
     type: 2}
   m_PrefabInternal: {fileID: 322712503}
---- !u!114 &1995645182 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114581010575685018, guid: 54330e030a08110409b283843e124f00,
-    type: 2}
-  m_PrefabInternal: {fileID: 322712503}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2000747513
 GameObject:
   m_ObjectHideFlags: 0

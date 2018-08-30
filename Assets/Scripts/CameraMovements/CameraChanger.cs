@@ -26,7 +26,7 @@ public class CameraChanger : MonoBehaviour {
 	void Update ()
     {
         altitude = Rocket.transform.position.y;
-        Debug.Log(altitude);
+        //Debug.Log(altitude);
         if (altitude <= 6)
         {
             FirstCamera.SetActive(true);
